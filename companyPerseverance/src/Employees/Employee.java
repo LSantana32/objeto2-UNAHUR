@@ -1,3 +1,5 @@
+package Employees;
+
 public class Employee {
     private final Integer hsWorked;
     private final Boolean hasASpouse;
