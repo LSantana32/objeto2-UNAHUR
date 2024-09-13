@@ -1,4 +1,4 @@
-package Employees;
+package employees;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class PermanentTest {
     public void verificarSiElEmpleadoPermanenteCobraBienElSalario() {
         Permanent perm = new Permanent(80,true,2,6);
         Double valorEsperado = 251000.0;
-        Double valorObtenido = perm.salary();
+        Double valorObtenido = perm.getSalary();
         assertEquals(valorEsperado, valorObtenido);
     }
 
@@ -17,7 +17,7 @@ public class PermanentTest {
     public void verificarSiElEmpleadoPermanente2CobraBienElSalario() {
         Permanent perm2 = new Permanent(160,false,0,4);
         Double valorEsperado = 484000.0;
-        Double valorObtenido = perm2.salary();
+        Double valorObtenido = perm2.getSalary();
         assertEquals(valorEsperado, valorObtenido);
     }
 }

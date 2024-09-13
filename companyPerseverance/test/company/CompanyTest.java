@@ -1,8 +1,9 @@
-package Company;
+package company;
 
-import Employees.Manager;
-import Employees.Permanent;
-import Employees.Temporary;
+import employees.Employee;
+import employees.Manager;
+import employees.Permanent;
+import employees.Temporary;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,10 +13,10 @@ public class CompanyTest {
 
     @Test
     public void verificarQueLaSumatoriaDelSalarioDeLosEmpleadosYaCreadosSeaCorrecta() {
-        Temporary temp = new Temporary(80, true, 0);
-        Permanent perm = new Permanent(80,true,2,6);
-        Permanent perm2 = new Permanent(160,false,0,4);
-        Manager manag = new Manager(160,true,1,10);
+        Employee temp = new Temporary(80, true, 0);
+        Employee perm = new Permanent(80,true,2,6);
+        Employee perm2 = new Permanent(160,false,0,4);
+        Employee manag = new Manager(160,true,1,10);
         company.addEmployee(temp);
         company.addEmployee(perm);
         company.addEmployee(perm2);
