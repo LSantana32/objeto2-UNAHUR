@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CarTest {
-    Car car = new Car();
+    Vehicle car = new Car();
 
     @Test
     public void queNoPuedaLlevarUnPaquete() {

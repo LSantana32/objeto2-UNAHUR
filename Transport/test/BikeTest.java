@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BikeTest {
-    Bike bike= new Bike();
+    Vehicle bike= new Bike();
 
     @Test
     public void queNoPuedaLlevarUnPaquete(){
@@ -23,10 +23,11 @@ public class BikeTest {
 
     @Test
     public void queNoPuedaEnviarPaqueteADestinoPorDestino(){
-        bike.assignCity("Moron");
         Package paquete = new Package(0.1,0.1,0.1,10,"Hurlingham");
+        Package paquete2 = new Package(0.1,0.1,0.1,10,"Moron");
+        bike.canSendPackageToDestiny(paquete);
         Boolean valorEsperado= false;
-        Boolean valorObtenido= bike.canSendPackageToDestiny(paquete);
+        Boolean valorObtenido= bike.canSendPackageToDestiny(paquete2);
         assertEquals(valorEsperado,valorObtenido);
     }
 

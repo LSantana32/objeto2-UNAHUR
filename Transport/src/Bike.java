@@ -1,33 +1,24 @@
-public class Bike extends Transport {
-    private Integer packageCounter = 0;
-    private String city = "";
 
-    public Bike() {
-        this.setMaxWeight(15);
-        this.setMaxVolume(0.125);
+public class Bike extends Vehicle {
+    private static final int MAX_WEIGHT = 15;
+    private static final double MAX_VOLUME = 0.125;
+    private static final int MAX_CITIES = 1;
+    private int packageCounter = 0;
+
+
+    protected Bike() {
+        super(MAX_WEIGHT, MAX_VOLUME, MAX_CITIES);
     }
 
     @Override
-    public Boolean canCarryPackage(Package aPackage) {
-        Boolean puedeLlevar = false;
+    public boolean canCarryPackage(Package aPackage) {
+        boolean canCarry = false;
         if (super.canCarryPackage(aPackage) && packageCounter < 2) {
             packageCounter++;
-            puedeLlevar = true;
+            canCarry = true;
         }
-        return puedeLlevar;
+        return canCarry;
     }
 
-    public void assignCity(String aCity) {
-        city = aCity;
-    }
 
-    public Boolean canGoToCity(String aCity) {
-        Boolean output = false;
-        if (city.isEmpty() || city.equals(aCity)) {
-            output = true;
-            if (city.isEmpty()) {
-                this.assignCity(aCity);
-            }
-        }return output;
-    }
 }
