@@ -3,9 +3,11 @@ package ar.edu.unahur.po2.barAndCustomers;
 import java.util.*;
 
 public class Bar {
-    List<Customer> customers = new ArrayList<Customer>();
+    List<Customer> customers;
 
-    public Bar() {}
+    public Bar() {
+        this.customers= new ArrayList<>();
+    }
 
     public void addCustomer(Customer customer) {
         if (!customers.contains(customer)) {
